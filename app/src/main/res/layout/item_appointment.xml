@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardAppointment"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp"
+    android:backgroundTint="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Delete Button in top-right corner -->
+        <ImageButton
+            android:id="@+id/btnDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_delete"
+            android:contentDescription="Delete appointment" />
+
+        <!-- More Details Button in top-right corner, below delete button -->
+        <ImageButton
+            android:id="@+id/btnMoreDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnDelete"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="4dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_menu_info_details"
+            android:contentDescription="More details" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/btnMoreDetails"
+            android:orientation="vertical">
+
+            <!-- Appointment Title -->
+            <TextView
+                android:id="@+id/textViewTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Appointment Title"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@color/black" />
+
+            <!-- Hospital Name -->
+            <TextView
+                android:id="@+id/textViewHospital"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hospital Name"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:layout_marginTop="4dp" />
+
+            <!-- Appointment Description -->
+            <TextView
+                android:id="@+id/textViewDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Appointment Description"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:layout_marginTop="4dp"/>
+
+            <!-- Appointment Date &amp; Time -->
+            <TextView
+                android:id="@+id/textViewTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Date &amp; Time"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:layout_marginTop="4dp"/>
+
+            <!-- Countdown Timer -->
+            <TextView
+                android:id="@+id/textViewCountdown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Countdown"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+    </RelativeLayout>
+</com.google.android.material.card.MaterialCardView>

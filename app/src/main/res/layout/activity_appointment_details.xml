@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Appointment Title -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Appointment Title"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Appointment Description -->
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Appointment Description"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Appointment Date &amp; Time -->
+    <TextView
+        android:id="@+id/tvDateTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Date &amp; Time"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/tvDescription"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Hospital Name -->
+    <TextView
+        android:id="@+id/tvHospitalName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Hospital Name"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/tvDateTime"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Hospital Description -->
+    <TextView
+        android:id="@+id/tvHospitalDesc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Hospital Description"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/tvHospitalName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Hospital Location (Latitude &amp; Longitude) -->
+    <TextView
+        android:id="@+id/tvHospitalLocation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Lat, Lng"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/tvHospitalDesc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Go to Map Button -->
+    <Button
+        android:id="@+id/btnGoToMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go to Map"
+        app:layout_constraintTop_toBottomOf="@id/tvHospitalLocation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
