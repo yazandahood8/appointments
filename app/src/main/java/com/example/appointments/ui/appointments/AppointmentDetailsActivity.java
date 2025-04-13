@@ -71,23 +71,15 @@ public class AppointmentDetailsActivity extends AppCompatActivity {
         }
 
         // Set button to open hospital location in map
-        btnGoToMap.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (hospital != null) {
-                    // Create a geo URI with latitude and longitude
-                    String uri = "geo:" + hospital.getLatitude() + "," + hospital.getLongitude() +
-                            "?q=" + hospital.getLatitude() + "," + hospital.getLongitude() + "(" + hospital.getName() + ")";
-                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
-                    // Check if there's an app to handle the map intent
-                    if (intent.resolveActivity(getPackageManager()) != null) {
-                        startActivity(intent);
-                    } else {
-                        Toast.makeText(AppointmentDetailsActivity.this, "No map application found", Toast.LENGTH_SHORT).show();
-                    }
-                } else {
-                    Toast.makeText(AppointmentDetailsActivity.this, "No hospital information available", Toast.LENGTH_SHORT).show();
-                }
+        btnGoToMap.setOnClickListener(view -> {
+            if (hospital != null) {
+                Intent intent = new Intent(AppointmentDetailsActivity.this, MapActivity.class);
+                intent.putExtra("latitude", hospital.getLatitude());
+                intent.putExtra("longitude", hospital.getLongitude());
+                intent.putExtra("name", hospital.getName());
+                startActivity(intent);
+            } else {
+                Toast.makeText(AppointmentDetailsActivity.this, "No hospital information available", Toast.LENGTH_SHORT).show();
             }
         });
     }

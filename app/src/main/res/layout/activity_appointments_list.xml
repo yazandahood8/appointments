@@ -13,41 +13,71 @@
         android:id="@+id/searchView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:queryHint="Search appointments"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:queryHint="Search appointments" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Spinner for filtering by type (All / Upcoming / Past) -->
     <Spinner
         android:id="@+id/spinnerFilter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         app:layout_constraintTop_toBottomOf="@id/searchView"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- ToggleButton for sort order -->
+    <ToggleButton
+        android:id="@+id/toggleSortOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOn="🔼 Sort: Asc"
+        android:textOff="🔽 Sort: Desc"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        android:padding="12dp"
+        android:elevation="4dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/spinnerFilter"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="8dp" />
+        app:layout_constraintEnd_toEndOf="parent" />
+
 
     <!-- RecyclerView to display appointments -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewAppointments"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/spinnerFilter"
-        app:layout_constraintBottom_toTopOf="@+id/buttonAddAppointment"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/toggleSortOrder"
+        app:layout_constraintBottom_toTopOf="@id/buttonShowAppointment"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Show Appointments Button -->
+    <Button
+        android:id="@+id/buttonShowAppointment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Show All Appointments"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@id/buttonAddAppointment"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp" />
+        style="@style/Widget.MaterialComponents.Button" />
 
     <!-- Add Appointment Button -->
     <Button
         android:id="@+id/buttonAddAppointment"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Add Appointment"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="16dp"
         style="@style/Widget.MaterialComponents.Button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
