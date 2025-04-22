@@ -4,5 +4,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="light_background">#F5F5F5</color>
     <color name="colorPrimary">#6200EE</color> <!-- or any hex color -->
+    <color name="purple_500">#6200EE</color>
+    <color name="teal_700">#018786</color>
+    <color name="text_primary">#212121</color>
 
 </resources>
